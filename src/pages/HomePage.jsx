@@ -4,7 +4,12 @@ import { ProductConsumer } from "../context/context";
 export const HomePage = () => {
   return (
     <>
-      <ProductConsumer>{(value) => <h2>{value}</h2>}</ProductConsumer>
+      <ProductConsumer>
+        {(value) => {
+          console.log(value);
+          return <h2>1</h2>;
+        }}
+      </ProductConsumer>
     </>
   );
 };
