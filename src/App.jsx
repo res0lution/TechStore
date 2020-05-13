@@ -10,10 +10,18 @@ import { Products } from "./pages/Products";
 import { SingleProductPage } from "./pages/SingleProductPage";
 import { CartPage } from "./pages/CartPage";
 import { Default } from "./pages/Default";
+import { Navbar } from "./components/Navbar";
+import { Sidebar } from "./components/Sidebar";
+import { SideCart } from "./components/SideCart";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
     <>
+      <Navbar />
+      <Sidebar />
+      <SideCart />
+
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
@@ -23,6 +31,8 @@ function App() {
         <Route path="/cart" component={CartPage} />
         <Route path="*" component={Default} />
       </Switch>
+
+      <Footer />
     </>
   );
 }
