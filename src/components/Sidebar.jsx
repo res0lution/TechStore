@@ -37,7 +37,7 @@ const SideWrapper = styled.nav`
   height: 100%;
   left: 0;
   position: fixed;
-  top: 61;
+  top: 60px;
   transition: var(--mainTransition);
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
   width: 100%;
