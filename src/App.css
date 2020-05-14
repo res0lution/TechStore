@@ -27,3 +27,23 @@ body {
   color: var(--mainBlack);
   font-family: "Open Sans", sans-serif !important;
 }
+
+.main-link {
+  background: var(--primaryColor);
+  border: none;
+  color: var(--mainWhite);
+  display: inline-block;
+  letter-spacing: var(--mainSpacing);
+  outline: 2px solid var(--primaryColor);
+  outline-offset: 4px;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: var(--mainTransition);
+}
+
+.main-link:hover {
+  background: var(--darkGrey);
+  color: var(--primaryColor);
+  outline-color: var(--darkGrey);
+  text-decoration: none;
+}

@@ -11,7 +11,13 @@ export const HomePage = () => {
         {(value) => {
           return (
             <Hero title="Awesome gadgets" max={true}>
-              <Link to="/products">Our products</Link>
+              <Link
+                className="main-link"
+                style={{ margin: "2rem" }}
+                to="/products"
+              >
+                Our products
+              </Link>
             </Hero>
           );
         }}
