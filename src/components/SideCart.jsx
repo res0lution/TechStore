@@ -1,7 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 
 import { ProductConsumer } from "../context/context";
-import styled from "styled-components";
 
 export const SideCart = () => {
   return (
