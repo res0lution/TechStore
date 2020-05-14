@@ -10,7 +10,7 @@ export const HomePage = () => {
       <ProductConsumer>
         {(value) => {
           return (
-            <Hero title="Awesome gadgets" max={true}>
+            <Hero title="Awesome gadgets" max="true">
               <Link
                 className="main-link"
                 style={{ margin: "2rem" }}
