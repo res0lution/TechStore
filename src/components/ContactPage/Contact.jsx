@@ -9,7 +9,11 @@ export const Contact = () => {
         <div className="col-10 mx-auto col-md-6 my-3">
           <Title title="Contact us" />
 
-          <form action="" className="mt-5">
+          <form
+            action="https://formspree.io/mnqgnrod"
+            method="POST"
+            className="mt-5"
+          >
             <div className="form-group">
               <input
                 type="text"
@@ -44,6 +48,10 @@ export const Contact = () => {
                 rows="10"
                 placeholder="Your message"
               />
+            </div>
+
+            <div className="form-group mt-3">
+              <button type="submit" className="btn btn-primary text-white w-100">Send</button>
             </div>
           </form>
         </div>
