@@ -25,13 +25,14 @@ class ProductProvider extends Component {
   };
 
   componentDidMount() {
-    this.storeProducts(items);
+    this.setProducts(items);
   }
 
-  storeProducts = (products) => {
+  setProducts = (products) => {
     let storeProducts = products.map((item) => {
       const { id } = item.sys;
-      const product = { id, ...item.fields };
+      const image = item.fields.image.fields.file.url;
+      const product = { id, ...item.fields, image };
 
       return product;
     });
@@ -91,7 +92,7 @@ class ProductProvider extends Component {
           closeCart: this.closeCart,
           openCart: this.openCart,
           addToCart: this.addToCart,
-          setSingleProduct: this.setSingleProduct
+          setSingleProduct: this.setSingleProduct,
         }}
       >
         {this.props.children}
