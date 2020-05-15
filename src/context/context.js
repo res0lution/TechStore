@@ -41,13 +41,16 @@ class ProductProvider extends Component {
       (item) => item.featured === true
     );
 
-    this.setState({
-      storeProducts,
-      filteredProducts: storeProducts,
-      featuredProducts,
-      cart: this.getStoregeCart(),
-      singleProduct: this.getStoregeProduct(),
-    });
+    this.setState(
+      {
+        storeProducts,
+        filteredProducts: storeProducts,
+        featuredProducts,
+        cart: this.getStoregeCart(),
+        singleProduct: this.getStoregeProduct(),
+      },
+      () => this.addTotals()
+    );
   };
 
   getStoregeCart = () => {
@@ -58,9 +61,38 @@ class ProductProvider extends Component {
     return {};
   };
 
-  getTotals = () => {};
+  getTotals = () => {
+    let subTotal = 0;
+    let cartItems = 0;
 
-  addTotals = () => {};
+    this.state.cart.forEach((item) => {
+      subTotal += item.total;
+      cartItems += item.count;
+    });
+
+    subTotal = parseFloat(subTotal.toFixed(2));
+    let tax = subTotal * 0.2;
+    tax = parseFloat(tax.toFixed(2));
+    let total = subTotal + tax;
+    total = parseFloat(total.toFixed(2));
+
+    return {
+      cartItems,
+      subTotal,
+      tax,
+      total,
+    };
+  };
+
+  addTotals = () => {
+    const total = this.getTotals();
+    this.setState({
+      cartItems: total.cartItems,
+      cartSubTotal: total.subTotal,
+      cartTax: total.tax,
+      cartTotal: total.total,
+    });
+  };
 
   syncStorage = () => {};
 
@@ -70,7 +102,7 @@ class ProductProvider extends Component {
     let tempItem = tempCart.find((item) => item.id === id);
 
     if (!tempItem) {
-      tempProducts.find((item) => item.id === id);
+      tempItem = tempProducts.find((item) => item.id === id);
       let total = tempItem.price;
       let cartItem = { ...tempItem, count: 1, total };
       tempCart = [...tempCart, cartItem];

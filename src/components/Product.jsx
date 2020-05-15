@@ -9,7 +9,7 @@ export const Product = ({ product }) => {
   return (
     <ProductConsumer>
       {(value) => {
-        const { addToCard, setSingleProduct } = value;
+        const { addToCart, setSingleProduct } = value;
 
         return (
           <ProductWrapper className="col-10 mx-auto col-sm-8 col-md-6 col-lg-4 my-3">
@@ -33,7 +33,7 @@ export const Product = ({ product }) => {
 
                 <FaCartPlus
                   className="icon"
-                  onClick={() => addToCard(product.id)}
+                  onClick={() => addToCart(product.id)}
                 />
               </div>
 
