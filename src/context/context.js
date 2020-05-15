@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import { linkData } from "./linkData";
 import { socialData } from "./socialData";
+import { items } from "./productData";
 
 const ProductContext = React.createContext();
 
@@ -20,8 +21,49 @@ class ProductProvider extends Component {
     storeProducts: [],
     featuredProducts: [],
     singleProduct: {},
-    loading: true
+    loading: true,
   };
+
+  componentDidMount() {
+    this.storeProducts(items);
+  }
+
+  storeProducts = (products) => {
+    let storeProducts = products.map((item) => {
+      const { id } = item.sys;
+      const product = { id, ...item.fields };
+
+      return product;
+    });
+
+    let featuredProducts = storeProducts.map((item) => item.featured === true);
+
+    this.setState({
+      storeProducts,
+      filteredProducts: storeProducts,
+      featuredProducts,
+      cart: this.getStoregeCart(),
+      singleProduct: this.getStoregeProduct(),
+    });
+  };
+
+  getStoregeCart = () => {
+    return [];
+  };
+
+  getStoregeProduct = () => {
+    return {};
+  };
+
+  getTotals = () => {};
+
+  addTotals = () => {};
+
+  syncStorage = () => {};
+
+  addToCart = (id) => {};
+
+  setSingleProduct = (id) => {};
 
   handleSidebar = () => {
     this.setState({ sidebarOpen: !this.state.sidebarOpen });
@@ -48,6 +90,8 @@ class ProductProvider extends Component {
           handleCart: this.handleCart,
           closeCart: this.closeCart,
           openCart: this.openCart,
+          addToCart: this.addToCart,
+          setSingleProduct: this.setSingleProduct
         }}
       >
         {this.props.children}
