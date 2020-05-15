@@ -37,7 +37,7 @@ class ProductProvider extends Component {
       return product;
     });
 
-    let featuredProducts = storeProducts.map((item) => item.featured === true);
+    let featuredProducts = storeProducts.filter((item) => item.featured === true);
 
     this.setState({
       storeProducts,

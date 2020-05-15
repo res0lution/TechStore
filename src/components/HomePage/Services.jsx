@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaDolly, FaRedo, FaDollarSign } from "react-icons/fa";
 import styled from "styled-components";
 

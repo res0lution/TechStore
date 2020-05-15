@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { Title } from "../Title";
 import { ProductConsumer } from "../../context/context";
@@ -19,6 +20,12 @@ export const Featured = () => {
               ));
             }}
           </ProductConsumer>
+        </div>
+      </div>
+
+      <div className="row mt-5">
+        <div className="col text-center">
+          <Link to="/products" className="main-link">Our products</Link>
         </div>
       </div>
     </section>
