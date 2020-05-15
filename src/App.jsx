@@ -6,7 +6,7 @@ import "./App.css";
 import { HomePage } from "./pages/HomePage"
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
-import { Products } from "./pages/Products";
+import { ProductsPage } from "./pages/ProductsPage";
 import { SingleProductPage } from "./pages/SingleProductPage";
 import { CartPage } from "./pages/CartPage";
 import { Default } from "./pages/Default";
@@ -26,7 +26,7 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/contact" component={ContactPage} />
-        <Route path="/products" exact component={Products} />
+        <Route path="/products" exact component={ProductsPage} />
         <Route path="/products/:id" component={SingleProductPage} />
         <Route path="/cart" component={CartPage} />
         <Route path="*" component={Default} />
