@@ -12,7 +12,15 @@ class ProductProvider extends Component {
     cartItems: 0,
     links: linkData,
     socialIcons: socialData,
-    cart: []
+    cart: [],
+    cartSubtotal: 0,
+    filteredProducts: [],
+    cartTax: 0,
+    cartTotal: 0,
+    storeProducts: [],
+    featuredProducts: [],
+    singleProduct: {},
+    loading: true
   };
 
   handleSidebar = () => {
