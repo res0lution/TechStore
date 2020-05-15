@@ -48,6 +48,7 @@ class ProductProvider extends Component {
         featuredProducts,
         cart: this.getStoregeCart(),
         singleProduct: this.getStoregeProduct(),
+        loading: false,
       },
       () => this.addTotals()
     );
@@ -59,14 +60,16 @@ class ProductProvider extends Component {
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     } else {
-      cart = []
+      cart = [];
     }
 
-    return cart
+    return cart;
   };
 
   getStoregeProduct = () => {
-    return localStorage.getItem("singleProduct") ? JSON.parse(localStorage.getItem("singleProduct")): {};
+    return localStorage.getItem("singleProduct")
+      ? JSON.parse(localStorage.getItem("singleProduct"))
+      : {};
   };
 
   getTotals = () => {
@@ -103,7 +106,7 @@ class ProductProvider extends Component {
   };
 
   syncStorage = () => {
-    localStorage.setItem("cart", JSON.stringify(this.state.cart))
+    localStorage.setItem("cart", JSON.stringify(this.state.cart));
   };
 
   addToCart = (id) => {
@@ -135,12 +138,12 @@ class ProductProvider extends Component {
   };
 
   setSingleProduct = (id) => {
-    let product = this.state.storeProducts.find(item => item.id === id);
-    localStorage.setItem("singleProduct", JSON.stringify(product))
+    let product = this.state.storeProducts.find((item) => item.id === id);
+    localStorage.setItem("singleProduct", JSON.stringify(product));
     this.setState({
-      singleProduct: {...product},
-      loading: false
-    })
+      singleProduct: { ...product },
+      loading: false,
+    });
   };
 
   handleSidebar = () => {
