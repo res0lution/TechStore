@@ -10,11 +10,11 @@ export const Cart = () => {
     <div className="py-5">
       <div className="container">
         <Title title="Your cart items" center />
-      </div>
 
-      <CartColumns />
-      <CartList />
-      <CartTotals />
+        <CartColumns />
+        <CartList />
+        <CartTotals />
+      </div>
     </div>
   );
 };

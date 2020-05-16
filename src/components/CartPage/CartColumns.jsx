@@ -13,6 +13,10 @@ export const CartColumns = () => {
         </div>
 
         <div className="col-lg-2">
+          <p className="text-uppercase">Price</p>
+        </div>
+
+        <div className="col-lg-2">
           <p className="text-uppercase">Quntity</p>
         </div>
 
