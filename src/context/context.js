@@ -28,6 +28,14 @@ class ProductProvider extends Component {
     this.setProducts(items);
   }
 
+  increment = (id) => {};
+
+  decrement = (id) => {};
+
+  removeItem = (id) => {};
+
+  clearCart = () => {};
+
   setProducts = (products) => {
     let storeProducts = products.map((item) => {
       const { id } = item.sys;
@@ -173,6 +181,10 @@ class ProductProvider extends Component {
           openCart: this.openCart,
           addToCart: this.addToCart,
           setSingleProduct: this.setSingleProduct,
+          increment: this.increment,
+          decrement: this.decrement,
+          removeItem: this.removeItem,
+          clearCart: this.clearCart,
         }}
       >
         {this.props.children}
