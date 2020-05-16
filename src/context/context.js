@@ -22,6 +22,12 @@ class ProductProvider extends Component {
     featuredProducts: [],
     singleProduct: {},
     loading: true,
+    search: "",
+    price: 0,
+    min: 0,
+    max: 0,
+    company: "all",
+    shipping: false
   };
 
   componentDidMount() {
