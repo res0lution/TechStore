@@ -76,7 +76,7 @@ export const FilterProducts = () => {
                     max={max}
                     className="filter-price"
                     value={price}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -90,7 +90,7 @@ export const FilterProducts = () => {
                     name="shipping"
                     id="shipping"
                     checked={shipping && true}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                   />
                 </div>
               </FilterWrapper>
