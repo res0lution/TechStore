@@ -5,7 +5,7 @@ import { CartList } from "./CartList";
 import { CartTotals } from "./CartTotals";
 import { Title } from "../Title";
 
-export const Cart = () => {
+export const Cart = ({history}) => {
   return (
     <div className="py-5">
       <div className="container">
@@ -13,7 +13,7 @@ export const Cart = () => {
 
         <CartColumns />
         <CartList />
-        <CartTotals />
+        <CartTotals history={history}/>
       </div>
     </div>
   );
